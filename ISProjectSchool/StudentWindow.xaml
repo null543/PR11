@@ -1,0 +1,30 @@
+﻿<Window x:Class="ISProjectSchool.StudentWindow" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Профиль Студента" Height="500" Width="600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="10">
+            <TextBlock Text="Навигация" FontWeight="Bold" Padding="5"/>
+            <Button Content="Мои Оценки" Margin="5" Click="MyGrades_Click"/>
+            <Button Content="Расписание" Margin="5" Click="MySchedule_Click"/>
+            <!-- Другие кнопки навигации при необходимости -->
+        </StackPanel>
+
+        <Grid Grid.Column="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Добро пожаловать, [Имя Студента]" FontWeight="Bold" FontSize="16" Grid.Row="0" Margin="5" x:Name="helloStudent"/>
+
+            <!-- Место для контента, например, оценки или расписание -->
+            <ContentControl x:Name="MainContent" Grid.Row="1" />
+        </Grid>
+    </Grid>
+</Window>

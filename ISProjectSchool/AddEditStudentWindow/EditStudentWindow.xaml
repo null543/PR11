@@ -1,0 +1,37 @@
+﻿<Window x:Class="ISProjectSchool.AddEditStudentWindow.EditStudentWindow"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Редактировать студента"
+    Height="420"
+    Width="450"
+    ResizeMode="NoResize"  WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="20">
+        <StackPanel>
+
+            <Label Content="Имя:"/>
+            <TextBox Margin="0,0,0,15" x:Name="txtFirstName1"/>
+
+            <Label Content="Фамилия:"/>
+            <TextBox Margin="0,0,0,15" x:Name="txtLastName"/>
+
+            <Label Content="Отчество:" />
+            <TextBox Margin="0,0,0,15" x:Name="txtMiddleName"/>
+
+            <Label Content="Почта:"/>
+            <TextBox Margin="0,0,0,15" x:Name="txtLogin"/>
+
+
+            <Label Content="Группа:"/>
+            <ComboBox Margin="0,0,0,15" x:Name="cmbGroup">
+                <!-- Элементы ComboBox можно добавить здесь -->
+            </ComboBox>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+                <Button Content="Добавить" Width="100" Margin="0,0,10,0" Click="Button_Click"/>
+                <Button Content="Отмена" Width="100" Click="Button_Click_1"/>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>

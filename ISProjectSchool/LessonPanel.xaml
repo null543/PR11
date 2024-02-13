@@ -1,0 +1,14 @@
+﻿<Window x:Class="ISProjectSchool.LessonPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Детали Урока" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="StudentsDataGrid" AutoGenerateColumns="False" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя Студента" Binding="{Binding StudentName}" Width="*"/>
+                <DataGridTextColumn Header="Оценка" Binding="{Binding Grade}" Width="100"/>
+                <DataGridCheckBoxColumn Header="Присутствие" Binding="{Binding IsPresent}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

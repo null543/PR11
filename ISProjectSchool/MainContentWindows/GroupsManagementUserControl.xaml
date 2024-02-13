@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="ISProjectSchool.MainContentWindows.GroupsManagementUserControl"
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Height="400" Width="570">
+    <Grid>
+        <!-- Отображение списка студентов и кнопок управления -->
+        <DataGrid x:Name="StudentsDataGrid" CanUserAddRows="False" IsReadOnly="False" ColumnWidth="*" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Код группы" Binding="{Binding GroupID}"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding GroupName}"/>
+                <DataGridTextColumn Header="Предметы" Binding="{Binding SubjectsString}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" Margin="10">
+            <Button Content="Добавить"  Click="AddGroupButton_Click"/>
+            <Button Content="Редактировать" Click="EditGroupButton_Click"/>
+            <Button Content="Удалить" Click="DeleteGroupButton_Click" />
+        </StackPanel>
+    </Grid>
+</UserControl>

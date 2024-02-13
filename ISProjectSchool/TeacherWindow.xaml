@@ -1,0 +1,29 @@
+﻿<Window x:Class="ISProjectSchool.TeacherWindow"  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Расписание Учителя" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ComboBox x:Name="LessonsComboBox" 
+                  Margin="10" 
+                  DisplayMemberPath="SubjectName"
+                  SelectedValuePath="LessonId"
+                  SelectionChanged="LessonsComboBox_SelectionChanged"/>
+
+        <ListView x:Name="LessonDetailsListView" MouseDoubleClick="LessonDetailsListView_MouseDoubleClick"  
+                  Grid.Row="1" 
+                  Margin="10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Время Начала" Width="120" DisplayMemberBinding="{Binding StartTimeFormatted}" />
+                    <GridViewColumn Header="Время Окончания" Width="120" DisplayMemberBinding="{Binding EndTimeFormatted}" />
+                    <GridViewColumn Header="Аудитория" Width="100" DisplayMemberBinding="{Binding RoomName}" />
+                    <GridViewColumn Header="Группа" Width="150" DisplayMemberBinding="{Binding GroupName}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
